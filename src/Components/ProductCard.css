@@ -1,0 +1,45 @@
+.productCard_main{
+    width: 80%;
+    width: 75vw;
+    min-height: 50vh;
+    border:2px solid rgb(7, 221, 14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+   
+}
+
+.PC_sec_1{
+    flex: 1;
+}
+
+.PC_sec_1 > p{
+    width: 90%;
+}
+.PC_sec_2{
+    flex: 1;
+    display: flex;
+  
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+
+}
+
+.PC_sec2_img{
+    width: 100%;
+    width: 50%;
+    height: 50%;
+    
+}
+
+.PC_sec_2 > button{
+    margin-top: 1em;
+    font-size: 1.2rem;
+    padding: 0.5em 1em;
+    background-color: red;
+    color: #fff;
+    border: transparent;
+    cursor: pointer;
+}
