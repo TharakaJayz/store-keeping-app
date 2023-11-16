@@ -1,20 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ProductCard.css";
 import axios from "axios";
 
+
 const ProductCard = (props) => {
+
   const deleteBtnHandler = async () => {
     const id = props.id;
     try {
       const response = await axios.delete(
         `https://dummyjson.com/products/${id}`
       );
-      console.log("Resource deleted:", response.data);
-      window.location.reload();
-      // Handle any additional logic, such as updating the UI
+      // console.log("Resource deleted:", response);
+      // window.location.reload();
+      if(response.request.status === 200){
+
+        props.function(true);
+      }else{
+        props.function(false);
+      }
+      
     } catch (error) {
       console.error("Error deleting resource:", error);
-      // Handle the error, e.g., display an error message
+      props.function(false);
+    
     }
   };
 
@@ -23,7 +32,7 @@ const ProductCard = (props) => {
       <section className="PC_sec_1">
         <h2> {props.title}</h2>
         <h3> {props.brand}</h3>
-        <h4> {props.price}</h4>
+        <h4> RS {props.price}</h4>
         <p> {props.desc}</p>
         <span> {props.rating}</span>
       </section>
@@ -32,6 +41,7 @@ const ProductCard = (props) => {
 
         <button onClick={deleteBtnHandler}> Delete</button>
       </section>
+      
     </div>
   );
 };

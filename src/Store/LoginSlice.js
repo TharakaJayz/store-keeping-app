@@ -10,6 +10,10 @@ const LoginSlice = createSlice({
             
             state.logic = action.payload.logic
 
+        },
+
+        removeStatus(state){
+            state.logic = false
         }
     }
 });
