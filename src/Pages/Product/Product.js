@@ -38,11 +38,13 @@ const Product = () => {
   };
 
   const SingleProductDeleteHandler = (value) => {
-  
-    setmMessage({
-      logic: true,
-      msg: "Item Deletion Succesfull !",
-    });
+    if(value){
+
+      setmMessage({
+        logic: true,
+        msg: "Item Deletion Succesfull !",
+      });
+    }
   };
   const MessageHandler = (value) => {
     if (value) {
